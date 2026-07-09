@@ -1,0 +1,33 @@
+import {useState} from "react";
+export default function BudgetForm() {
+const [budget, setBudget] = useState(0);
+const handleChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+
+}
+return (
+    <form className="space-y-5">
+        <div className="flex flex-col space-y-5">
+            <label htmlFor="budget" className="text-4xl text-blue-800 font-bold text-center">
+                Define Tu Presupuesto
+            </label>
+            <input 
+                id="budget"
+                type="number"
+                className="w-full bg-white shadow-lg border border-gray-200 p-2"
+                placeholder="Ingresa tu presupuesto"
+                name="budget"
+                value={budget}
+                onChange={handleChange}
+            />
+        </div>
+
+        <input
+            type="submit"
+            value="Definir Presupuesto"
+            className="bg-blue-800 hover:bg-blue-700 cursor-pointer w-full p-2 text-white font-black uppercase"
+        
+        />
+    </form>
+)
+}
